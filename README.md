@@ -1,44 +1,18 @@
 # RPN Calculator
 
-A Reverse Polish Notation (RPN) mathematical expression parser, infix-to-postfix translator, and stack-based calculation engine.
+Postfix and infix expression translator and stack calculator in Python.
 
 ## Overview
 
-Traditional mathematical notation (infix, such as `3 + 4 * 2`) relies on operator precedence rules and parentheses. Reverse Polish Notation (postfix, such as `3 4 2 * +`) places operators after their operands, enabling unambiguous, linear-time evaluation without recursive parsing.
+Implements Dijkstra's Shunting-yard algorithm to parse infix mathematical expressions into Reverse Polish Notation (postfix) and evaluate them in linear time using an operand stack.
 
-This project implements custom fundamental data structures and Dijkstra's Shunting-yard algorithm to parse, translate, and evaluate arithmetic expressions interactively.
+## Implementation Details
 
-## Features
-
-- **Infix to Postfix Translation**: Parses standard mathematical expressions into RPN using Dijkstra's Shunting-yard algorithm.
-- **Linear-Time Evaluation**: Computes results in single-pass O(N) time using an operand evaluation stack.
-- **Custom Data Structures**: Implements pure Python `Stack` (LIFO) and `Queue` (FIFO) data structures from scratch.
-- **Interactive GUI**: Built-in graphical calculator interface for expression input and step-by-step evaluation.
+- **Shunting-Yard Parser**: Handles operator precedence, associativity, and parenthetical sub-expressions.
+- **Stack Evaluation**: Single-pass evaluation over tokenized postfix queues.
+- **Custom Stack & Queue**: Built from scratch without relying on external collections.
+- **GUI Interface**: Tkinter frontend for step-by-step expression evaluation.
 
 ## Tech Stack
 
-- **Language**: Python 3
-- **GUI Framework**: Tkinter
-- **Algorithms**: Shunting-Yard Algorithm, Stack-Based Evaluation
-
-## Project Structure
-
-```
-RPN_Calculator/
-├── Stack.py        # Custom LIFO Stack implementation
-├── Queue.py        # Custom FIFO Queue implementation
-├── rpn.py          # Shunting-yard parser & infix-to-postfix translator
-├── StackCalc.py    # Stack evaluation engine & GUI interface
-└── README.md
-```
-
-## Getting Started
-
-```bash
-# Clone repository
-git clone https://github.com/vsingh2005/RPN_Calculator.git
-cd RPN_Calculator
-
-# Run calculator application
-python StackCalc.py
-```
+Python, Tkinter
